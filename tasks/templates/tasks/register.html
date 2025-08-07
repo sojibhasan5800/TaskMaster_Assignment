@@ -1,0 +1,62 @@
+{% extends 'tasks/base.html' %}
+{% block content %}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+    .register-card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        background-color: #ffffff;
+    }
+    .register-header {
+        background: linear-gradient(90deg, #28a745, #20c997);
+        color: white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 20px;
+    }
+    .form-label {
+        font-weight: 500;
+    }
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card register-card mt-5">
+            <div class="register-header text-center">
+                <h4 class="mb-0">Create Your Account</h4>
+            </div>
+            <div class="card-body px-4 py-4">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="text-danger small mt-1">
+                                    {% for error in field.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
+                    <button type="submit" class="btn btn-success w-100">Register</button>
+                </form>
+
+                <hr class="my-4">
+
+                <p class="text-center mb-0">
+                    Already have an account? 
+                    <a href="{% url 'login' %}" class="text-decoration-none text-success fw-bold">Login here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

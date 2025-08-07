@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tasks',
 ]
-LOGIN_REDIRECT_URL = 'task_list'
-LOGOUT_REDIRECT_URL = 'login'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
