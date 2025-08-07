@@ -1,0 +1,29 @@
+
+body {
+background-color: #f8f9fa; /* light gray background */
+}
+.navbar {
+background-color: #ffffff;
+border-bottom: 1px solid #dee2e6;
+}
+.navbar-brand {
+font-weight: bold;
+color: #0d6efd !important;
+}
+.nav-link {
+color: #343a40 !important;
+}
+.nav-link:hover {
+color: #0d6efd !important;
+}
+.card {
+border-radius: 12px;
+}
+hr {
+border-top: 1px solid #dee2e6;
+margin-top: 1rem;
+margin-bottom: 1rem;
+}
+.alert {
+border-radius: 8px;
+}
