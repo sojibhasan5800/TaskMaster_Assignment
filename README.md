@@ -13,6 +13,7 @@ A simple task management app using Django.
 
 ```bash
 git clone https://github.com/sojibhasan5800/TaskMaster_Assignment.git
+cd TaskMaster_Assignment
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
